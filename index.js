@@ -150,6 +150,11 @@ volume_bar_control.addEventListener('mousedown', (e) => {
 
 })
 
+document.addEventListener('mouseup', (e) => {
+
+    isdragging = false;
+
+});
 
 volume.addEventListener('mouseover', (e) => {
 
