@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player {
+    margin-top: 100px;
+    width: 850px;
+    height: 500px;
+    background: black;
+    position: relative;
+}
+
+.video-player video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-player .play-button,
+.video-player .pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.video-player .play-button i,
+.video-player .pause-button i {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.video-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.controls_shadows {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    height: 180%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    /* background: black; */
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.877) 100%);
+}
+
+.control {
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    line-height: 30px;
+    transition: .4s;
+}
+
+.control:hover {
+    background: rgba(252, 252, 252, 0.171);
+}
+
+.d-none {
+    display: none;
+}
+
+.show {
+    animation: showbutton 0.8s ease-in-out;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    left: 1%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.555);
+}
+
+.current-time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(8, 173, 159, 0.918);
+}
+
+.video-name {
+    padding: 15px 20px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+@keyframes showbutton {
+    50% {
+        opacity: 0.3;
+    }
+    650% {
+        opacity: 0.3;
+        transform: scale(1.8);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
